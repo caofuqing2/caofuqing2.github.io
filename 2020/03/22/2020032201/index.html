@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>2020苹果审核那些事 | 曹福清</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="最近苹果审核越来越严，写此博客记录一下踩过的一些坑，下次就不会再遇到相同的问题了  Guideline 4.2.3 - Design - Minimum FunctionalityWe were required to install the WeChat app before we could log in via WeChat. Users should be able to log in w">
+<meta name="keywords" content="曹福清 博客">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2020苹果审核那些事">
+<meta property="og:url" content="http://caofuqing.top/2020/03/22/2020032201/index.html">
+<meta property="og:site_name" content="曹福清">
+<meta property="og:description" content="最近苹果审核越来越严，写此博客记录一下踩过的一些坑，下次就不会再遇到相同的问题了  Guideline 4.2.3 - Design - Minimum FunctionalityWe were required to install the WeChat app before we could log in via WeChat. Users should be able to log in w">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2021-09-04T03:04:32.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2020苹果审核那些事">
+<meta name="twitter:description" content="最近苹果审核越来越严，写此博客记录一下踩过的一些坑，下次就不会再遇到相同的问题了  Guideline 4.2.3 - Design - Minimum FunctionalityWe were required to install the WeChat app before we could log in via WeChat. Users should be able to log in w">
+  
+    <link rel="alternate" href="/atom.xml" title="曹福清" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">曹福清</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">个人博客</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://caofuqing.top"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2020032201" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/22/2020032201/" class="article-date">
+  <time datetime="2020-03-22T02:27:03.000Z" itemprop="datePublished">2020-03-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/flutter/">flutter</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      2020苹果审核那些事
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>最近苹果审核越来越严，写此博客记录一下踩过的一些坑，下次就不会再遇到相同的问题了</strong></p>
+<ol>
+<li><h3 id="Guideline-4-2-3-Design-Minimum-Functionality"><a href="#Guideline-4-2-3-Design-Minimum-Functionality" class="headerlink" title="Guideline 4.2.3 - Design - Minimum Functionality"></a>Guideline 4.2.3 - Design - Minimum Functionality</h3><p>We were required to install the WeChat app before we could log in via WeChat. Users should be able to log in with WeChat and access their accounts without having to install any additional apps.</p>
+<p><strong>Next Steps</strong></p>
+<p>If you would like to offer authentication through WeChat, please use a mechanism that allows users to log in with WeChat from within your app without first having to install an additional app.</p>
+<p>We recommend implementing the Safari View Controller API to display web content within your app. The Safari View Controller allows the display of a URL and inspection of the certificate from an embedded browser in an app so that customers can verify the webpage URL and SSL certificate to confirm they are entering their sign in credentials into a legitimate page.</p>
+<p><strong>Resources</strong></p>
+<p>For additional information on the Safari View Controller API, please review the <a href="https://developer.apple.com/library/archive/releasenotes/General/WhatsNewInSafari/Introduction/Introduction.html" target="_blank" rel="noopener">What’s New in Safari</a> webpage.</p>
+</li>
+</ol>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案:"></a>解决方案:</h3><p>   最好判断一下当前手机微信APP是否安装,安装显示微信登录入口,否则不显示入口</p>
+<a id="more"></a>
+<ol start="2">
+<li><h3 id="Guideline-5-0-Legal"><a href="#Guideline-5-0-Legal" class="headerlink" title="Guideline 5.0 - Legal"></a>Guideline 5.0 - Legal</h3><p>Your app allows users under the age of 18 to register for an account or allows users to search for other users under the age of 18. Since your app is primarily a dating app, it is more appropriate for an adult audience.</p>
+<p><strong>Next Steps</strong></p>
+<p>To resolve this issue, please revise your app to ensure users under 18 cannot register an account. Additionally, it would be appropriate to restrict searchable age groups to 18+.</p>
+<p>Please see attached screenshots for details.</p>
+</li>
+</ol>
+<h3 id="解决方案-1"><a href="#解决方案-1" class="headerlink" title="解决方案:"></a>解决方案:</h3><p>   按照苹果要求即可,对于约会类的APP,年龄在APP上显示要大于18岁</p>
+<ol start="3">
+<li><h3 id="Guideline-2-3-1-Performance"><a href="#Guideline-2-3-1-Performance" class="headerlink" title="Guideline 2.3.1 - Performance"></a>Guideline 2.3.1 - Performance</h3><p>We discovered that your app contains hidden features. Attempting to hide features, functionality or content in your app is considered egregious behavior and can lead to removal from the Apple Developer Program.</p>
+<p>Specifically, we found that your app includes AliPay (支付寶), which provides access to external payment mechanisms and enables the purchase of content, services, or functionality by means other than the in-app purchase API.</p>
+<p>If you feel that we have misunderstood how your app functions and that your app is compliant with the <a href="https://developer.apple.com/app-store/review/guidelines/" target="_blank" rel="noopener">App Store Review Guidelines</a>, please reply to this message in Resolution Center to explain how this feature works.</p>
+<p>The next submission of this app may require a longer review time, and this app will not be eligible for an expedited review until this issue is resolved.</p>
+<p><strong>Next Steps</strong></p>
+<p>- Review the Performance section of the <a href="https://developer.apple.com/app-store/review/guidelines/" target="_blank" rel="noopener">App Store Review Guidelines</a>.<br>- Ensure your app, as well as any third-party code and SDKs implemented in your app, are compliant with all sections of the <a href="https://developer.apple.com/app-store/review/guidelines/" target="_blank" rel="noopener">App Store Review Guidelines</a> and the <a href="https://developer.apple.com/terms/" target="_blank" rel="noopener">Terms &amp; Conditions</a> of the Apple Developer Program.<br>- Revise or remove the hidden features from your app. Once your app is fully compliant, resubmit your app for review.</p>
+<p>Submitting apps designed to mislead or harm customers or evade the review process may result in the termination of your Apple Developer Program account. Review the <a href="https://developer.apple.com/terms/" target="_blank" rel="noopener">Terms &amp; Conditions</a> of the Apple Developer Program to learn more about our policies regarding termination.</p>
+</li>
+</ol>
+<h3 id="解决方案-2"><a href="#解决方案-2" class="headerlink" title="解决方案:"></a>解决方案:</h3><p>   对于支付购买虚拟类物品(没有实际的物流发货),苹果要求必须使用自己的内购,不能有支付宝或微信支付的SDK!苹果审核会检测APP代码,切记!!!(去按要求对接内购)</p>
+<ol start="4">
+<li><h3 id="Guideline-5-1-1-Legal-Privacy-Data-Collection-and-Storage"><a href="#Guideline-5-1-1-Legal-Privacy-Data-Collection-and-Storage" class="headerlink" title="Guideline 5.1.1 - Legal - Privacy - Data Collection and Storage"></a>Guideline 5.1.1 - Legal - Privacy - Data Collection and Storage</h3><p>We noticed that your app requests the user’s consent to access their camera, photos, and location but does not clarify the use of the camera, photos, and location in the applicable purpose string.</p>
+<p><strong>Next Steps</strong></p>
+<p>Please revise the relevant purpose string in your app’s Info.plist file to specify why the app is requesting access to the user’s camera, photos, and location. You can modify your app’s Info.plist file using the property list editor in Xcode.</p>
+<p>To help users understand why your app is requesting access to their personal data, all permission request alerts in your app should specify how your app will use the requested feature.</p>
+<p><strong>Resources</strong></p>
+<p>For additional information and instructions on requesting permission, please review the <a href="https://developer.apple.com/ios/human-interface-guidelines/app-architecture/requesting-permission/" target="_blank" rel="noopener">Requesting Permission</a> section of the iOS Human Interface Guidelines and the <a href="https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18" target="_blank" rel="noopener">Information Property List Key Reference</a>. You may also want to review the <a href="https://developer.apple.com/library/archive/qa/qa1937/_index.html" target="_blank" rel="noopener">Technical Q&amp;A QA1937: Resolving the Privacy-Sensitive Data App Rejection</a> page for details on how to provide a usage description for permission request alerts.</p>
+<p>Please see attached screenshots for details.</p>
+</li>
+</ol>
+<h3 id="解决方案-3"><a href="#解决方案-3" class="headerlink" title="解决方案:"></a>解决方案:</h3>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;key&gt;NSAppleMusicUsageDescription&lt;/key&gt;</span><br><span class="line">&lt;string&gt;App需要您的同意才能访问媒体库&lt;/string&gt;</span><br><span class="line">&lt;key&gt;NSCalendarsUsageDescription&lt;/key&gt;</span><br><span class="line">&lt;string&gt;觅愿想始终访问您的日历，这样可以为您选择日期发布时间&lt;/string&gt;</span><br><span class="line">&lt;key&gt;NSCameraUsageDescription&lt;/key&gt;</span><br><span class="line">&lt;string&gt;觅愿需要您的同意才能访问相机,这样可以为您拍摄头像以及个人相册的照片&lt;/string&gt;</span><br><span class="line">&lt;key&gt;NSContactsUsageDescription&lt;/key&gt;</span><br><span class="line">&lt;string&gt;App需要您的同意才能访问通讯录信息&lt;/string&gt;</span><br><span class="line">&lt;key&gt;NSLocationAlwaysAndWhenInUseUsageDescription&lt;/key&gt;</span><br><span class="line">&lt;string&gt;觅愿想始终访问您的位置，这样可以为您自动匹配附近的人&lt;/string&gt;</span><br><span class="line">&lt;key&gt;NSLocationAlwaysUsageDescription&lt;/key&gt;</span><br><span class="line">&lt;string&gt;觅愿想始终访问您的位置，这样可以为您自动匹配附近的人&lt;/string&gt;</span><br><span class="line">&lt;key&gt;NSLocationWhenInUseUsageDescription&lt;/key&gt;</span><br><span class="line">&lt;string&gt;觅愿想始终访问您的位置，这样可以为您自动匹配附近的人&lt;/string&gt;</span><br><span class="line">&lt;key&gt;NSMotionUsageDescription&lt;/key&gt;</span><br><span class="line">&lt;string&gt;App需要您的同意才能访问运动与健身&lt;/string&gt;</span><br><span class="line">&lt;key&gt;NSPhotoLibraryUsageDescription&lt;/key&gt;</span><br><span class="line">&lt;string&gt;觅愿需要您的同意才能访问相册,这样可以为您选取头像以及个人相册的照片&lt;/string&gt;</span><br><span class="line">&lt;key&gt;NSSpeechRecognitionUsageDescription&lt;/key&gt;</span><br><span class="line">&lt;string&gt;App需要您的同意才能访问语音识别&lt;/string&gt;</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li><h3 id="Guideline-3-1-1-Business-Payments-In-App-Purchase"><a href="#Guideline-3-1-1-Business-Payments-In-App-Purchase" class="headerlink" title="Guideline 3.1.1 - Business - Payments - In-App Purchase"></a>Guideline 3.1.1 - Business - Payments - In-App Purchase</h3><p>We noticed that your app or its metadata enables the purchase of content, services, or functionality in the app by means other than the in-app purchase API, which is not appropriate for the App Store.</p>
+<p><strong>Next Steps</strong></p>
+<p>While the payment system that you have included may conduct the transaction outside of the app, if the purchasable content, functionality, or services are intended to be used in the app, they must be purchased using in-app purchase, within the app - unless it is of the type referenced in guideline 3.1.3 of the App Store Review Guidelines.</p>
+</li>
+</ol>
+<p>   <strong>In-App Purchase</strong></p>
+<p>   It may be appropriate to revise your app to use the in-app purchase API to provide content purchasing functionality.</p>
+<p>   In-app purchase provides several benefits, including:</p>
+<p>   - The flexibility to support a variety of business models.<br>   - Impacting your app ranking by consolidating your sales to one app rather than distributing them across multiple apps.<br>   - An effective marketing vehicle to drive additional sales of new content.</p>
+<p>   For information on in-app purchase, please refer to the following documentation:</p>
+<p>   <a href="https://developer.apple.com/in-app-purchase/" target="_blank" rel="noopener">In-App Purchase for Developers</a></p>
+<p>   <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/StoreKitGuide/" target="_blank" rel="noopener">In-App Purchase Programming Guide</a></p>
+<p>   For step-by-step instructions on in-app purchase creation within App Store Connect, refer to <a href="https://help.apple.com/app-store-connect/#/devb57be10e7" target="_blank" rel="noopener">App Store Connect Help</a>.</p>
+<p>   Please see attached screenshot for details.</p>
+<h3 id="解决方案-4"><a href="#解决方案-4" class="headerlink" title="解决方案:"></a>解决方案:</h3><p>   对于内购,如果是会员的话,APP提供非会员账号供苹果审核,在提交APP备注或者内购商品审核备注最好给出详细的说明,下面是我给的例子</p>
+<p>   点击首页第一个用户头像(见附件)进入其详情页可做演示查看微信和查看相册(详情页右上角有举报加入黑名单此用户功能)</p>
+<p>   <strong>版本提交备注:</strong></p>
+<p>   下面提供的信息不是必要操作的,只是辅助审核用的</p>
+<p>   1.APP内购操作使用录屏演示链接地址 *</p>
+<p>   2.已有APP会员的测试账号:<em> 密码:</em></p>
+<p>   3.非会员的测试账号:<em> 密码:</em></p>
+<p>   4.APP内购支付时使用的测试付款账户Apple ID:<em> 密码:</em></p>
+<p>   <strong>功能内购提交备注:</strong></p>
+<p>   在非会员账号登录下,进入首页-会员-办理会员卡-APP会员价格和特权介绍-去选择支付APP会员,即可拥有此会员特权,有效期为30天,失效后需重新购买</p>
+<p>   下面提供的信息不是必要操作的,只是辅助审核用的</p>
+<p>   1.APP内购操作使用录屏演示链接地址*</p>
+<p>   2.已有APP会员的测试账号:<em> 密码:</em></p>
+<p>   3.APP内购支付时使用的测试付款账户Apple ID:<em> 密码:</em> </p>
+<p>   备注:App会员月卡 是198RMB只可购买一次的产品，在使用之后即失效，必须再次购买。</p>
+<ol start="6">
+<li><h3 id="Guideline-3-1-1-Payments-Payments-In-App-Purchase"><a href="#Guideline-3-1-1-Payments-Payments-In-App-Purchase" class="headerlink" title="Guideline 3.1.1 - Payments - Payments - In-App Purchase"></a>Guideline 3.1.1 - Payments - Payments - In-App Purchase</h3><p>We noticed that your in-app purchase product is set to an incorrect product type.</p>
+<p>App会员1-198 is set to Consumable.</p>
+<p><strong>Next Steps</strong></p>
+<p>Based on product functionality, please use the non-consumable in-app purchase product type. Non-consumable products are only purchased once by users and are always available on all devices that are associated with that user’s App Store account.</p>
+<p>Note: The product type cannot be changed once an in-app purchase product has been created. Therefore, you will need to create a new in-app purchase product with the correct product type.</p>
+<p>To create new in-app purchases:</p>
+<p>- Log in to App Store Connect<br>- Click on “My Apps”<br>- Select your app<br>- Click on “Features” to create new in-app purchases<br>- Click Save<br>- Once you’ve completed all changes, click the “Submit for Review” button at the top of the App Version Information page.</p>
+<p><strong>Resources</strong></p>
+<p>More information on in-app purchase product types is available in <a href="https://help.apple.com/app-store-connect/#/dev3cd978dbd" target="_blank" rel="noopener">App Store Connect Help</a>.</p>
+</li>
+</ol>
+<h3 id="解决方案-5"><a href="#解决方案-5" class="headerlink" title="解决方案:"></a>解决方案:</h3><p>   如果是会员的话把产品类型需要是非续订和续订订阅产品,并在APP显示界面上显示出来比如 199元/月,按照其意思即可审核通过</p>
+<p>   PS:在做内购的时候,最好的方案去显示虚拟的物品代表等价兑换,比如一朵小花6元</p>
+<ol start="7">
+<li><h3 id="Guideline-1-2-Safety-User-Generated-Content"><a href="#Guideline-1-2-Safety-User-Generated-Content" class="headerlink" title="Guideline 1.2 - Safety - User Generated Content"></a>Guideline 1.2 - Safety - User Generated Content</h3><p>Your app enables the display of user-generated content but does not have the proper precautions in place.</p>
+<p><strong>Next Steps</strong></p>
+<p>To resolve this issue, please revise your app to implement all of the following precautions:</p>
+<p>- A mechanism for users to block abusive users</p>
+<p>Please see attached screenshot for details.</p>
+</li>
+</ol>
+<h3 id="解决方案-6"><a href="#解决方案-6" class="headerlink" title="解决方案:"></a>解决方案:</h3><p>   所有的界面有用户操作产生的比如发布的动态,附近的人,都要加入举报和拉黑</p>
+<ol start="8">
+<li><p>Guideline 2.1 - Performance - App Completeness</p>
+<p>We were unable to review your app as it crashed on launch. We have attached detailed crash logs to help troubleshoot this issue.</p>
+<p><strong>Next Steps</strong></p>
+<p>To resolve this issue, please revise your app and test it on a device to ensure it will launch without crashing.</p>
+<p><strong>Resources</strong></p>
+<p>For information on how to symbolicate and read a crash log, please review <a href="https://developer.apple.com/library/archive/technotes/tn2151/_index.html" target="_blank" rel="noopener">Tech Note TN2151 Understanding and Analyzing Application Crash Reports</a>.</p>
+<p>crashlog-232FCE01-3856-4AD9-840F-A23646FB5565.txt</p>
+<p>crashlog-4241C53E-4F6D-420A-B246-BEB8A979315D.txt</p>
+<p>crashlog-9E12358E-2061-4B5E-BA51-F9E5D12DBC09.txt</p>
+</li>
+</ol>
+<h3 id="解决方案-7"><a href="#解决方案-7" class="headerlink" title="解决方案:"></a>解决方案:</h3><p>   按要求去排查问题,最后发现是在iPad上最新的系统造成的崩溃原因,确少rootViewContoller 在Main 写上Main.storyboard  appdelege.m单独判断iPad即可(苹果要求可以不适配iPad,但一定能在iPad上运行,他们审核测试的时候会在iPad上测试,作为开发者的我们在每次提交APP版本审核的时候最好在iPad上测试一遍流程,尽量避免新的系统在iPad上有问题)</p>
+<ol start="9">
+<li><h3 id="Guideline-1-2-Safety-User-Generated-Content-1"><a href="#Guideline-1-2-Safety-User-Generated-Content-1" class="headerlink" title="Guideline 1.2 - Safety - User Generated Content"></a>Guideline 1.2 - Safety - User Generated Content</h3><p>Your app enables the display of user-generated content but does not have the proper precautions in place.</p>
+<p><strong>Next Steps</strong></p>
+<p>To resolve this issue, please revise your app to implement all of the following precautions:</p>
+<p>- Require that users agree to terms (EULA) and these terms must make it clear that there is no tolerance for objectionable content or abusive users<br>- A method for filtering objectionable content<br>- A mechanism for users to flag objectionable content<br>- A mechanism for users to block abusive users<br>- The developer must act on objectionable content reports within 24 hours by removing the content and ejecting the user who provided the offending content</p>
+</li>
+</ol>
+<h3 id="解决方案-8"><a href="#解决方案-8" class="headerlink" title="解决方案:"></a>解决方案:</h3><p>   所有的界面有用户操作产生的比如发布的动态,在进入发布动态前提示一个弹框,这个弹框可以保存本地,只弹出一次即可,内容就是同意协议说明,有同意和不同意选项,同意继续操作,不同意则返回上一个界面</p>
+<ol start="10">
+<li>对于不明确的问题要及时多与苹果审核回复邮件方式进行一一解释说明,必要时提供附近,越详细越好</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://caofuqing.top/2020/03/22/2020032201/" data-id="clvyuddb50015jsjhc60o3fbh" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/03/23/2020032301/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Flutter网络资源学习
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/08/12/2019081201/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">2019年第2周_2019_08_12</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/flutter/">flutter</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/iOS/">iOS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/学习计划/">学习计划</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/09/05/2021090501/">加解密方案</a>
+          </li>
+        
+          <li>
+            <a href="/2021/09/04/2021090401/">短信链</a>
+          </li>
+        
+          <li>
+            <a href="/2021/09/01/2021090102/">Flutter代码开发规范</a>
+          </li>
+        
+          <li>
+            <a href="/2021/09/01/2021090101/">Flutter与小程序通讯全过程</a>
+          </li>
+        
+          <li>
+            <a href="/2020/03/31/2020033101/">学习Flutter的艰辛之谈</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 talking<br>
+      WeChat: qingguoxinghou   QQ: 905167677 
+
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

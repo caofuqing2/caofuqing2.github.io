@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>javascript(十一) | 曹福清</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="作用域【scope】 一段程序代码中所用到的数据并不总是有效/可用的，而限定这个数据的可用性的代码范围就是这个名字的作用域。【一条数据可以在哪个范围中使用】   作用域的使用提高了程序逻辑的局部性，增强程序的可靠性，减少名字冲突 一个变量是全局变量，还是局部变量主要来看变量声明的位置,==声明在函数内部，就是这个函数的局部变量.== 在js的ECMAScript5.1中，只有函数可以产生作用域 当">
+<meta name="keywords" content="曹福清 博客">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript(十一)">
+<meta property="og:url" content="http://caofuqing.top/2019/03/21/2019032108/index.html">
+<meta property="og:site_name" content="曹福清">
+<meta property="og:description" content="作用域【scope】 一段程序代码中所用到的数据并不总是有效/可用的，而限定这个数据的可用性的代码范围就是这个名字的作用域。【一条数据可以在哪个范围中使用】   作用域的使用提高了程序逻辑的局部性，增强程序的可靠性，减少名字冲突 一个变量是全局变量，还是局部变量主要来看变量声明的位置,==声明在函数内部，就是这个函数的局部变量.== 在js的ECMAScript5.1中，只有函数可以产生作用域 当">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2021-02-26T05:09:22.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="javascript(十一)">
+<meta name="twitter:description" content="作用域【scope】 一段程序代码中所用到的数据并不总是有效/可用的，而限定这个数据的可用性的代码范围就是这个名字的作用域。【一条数据可以在哪个范围中使用】   作用域的使用提高了程序逻辑的局部性，增强程序的可靠性，减少名字冲突 一个变量是全局变量，还是局部变量主要来看变量声明的位置,==声明在函数内部，就是这个函数的局部变量.== 在js的ECMAScript5.1中，只有函数可以产生作用域 当">
+  
+    <link rel="alternate" href="/atom.xml" title="曹福清" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">曹福清</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">个人博客</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://caofuqing.top"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2019032108" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/21/2019032108/" class="article-date">
+  <time datetime="2019-03-21T08:43:56.000Z" itemprop="datePublished">2019-03-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      javascript(十一)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="作用域【scope】"><a href="#作用域【scope】" class="headerlink" title="作用域【scope】"></a>作用域【scope】</h2><blockquote>
+<p>一段程序代码中所用到的数据并不总是有效/可用的，而限定这个数据的可用性的代码范围就是这个名字的作用域。【一条数据可以在哪个范围中使用】</p>
+</blockquote>
+<ul>
+<li>作用域的使用提高了程序逻辑的局部性，增强程序的可靠性，减少名字冲突</li>
+<li>一个变量是全局变量，还是局部变量主要来看变量声明的位置,==声明在函数内部，就是这个函数的局部变量.==</li>
+<li>在js的ECMAScript5.1中，只有函数可以产生作用域</li>
+<li>当我们声明一个函数的时候，同时该函数就会创建一个属性这个属性是<a href="作用域">[Scopes]</a>,我们在这个函数中 声明的变量都会被存入这个函数的[[Scopes]]属性中</li>
+</ul>
+<p>函数外部的变量不可以访问函数内部的局部变量数据。<br><a id="more"></a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var i = 10;</span><br><span class="line">function fn()&#123;</span><br><span class="line">for(var i = 0;i&lt;100;i++)&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">fn();</span><br><span class="line">alert(i); //10</span><br><span class="line">原因：因为for循环的时候var(声明)了i，所以i只是作为fn内部的局部变量，alert(i)在外面是不能获取到的。</span><br></pre></td></tr></table></figure>
+<p>第二个var预解析,但是只会把预解析提到当前script(或function)的最前面。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">var i = 0;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">alert(i); //0</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">__________________</span><br><span class="line">&lt;script&gt;</span><br><span class="line">alert(i);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">var i = 0;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="全局作用域（全局变量）【在任何地方都能访问】"><a href="#全局作用域（全局变量）【在任何地方都能访问】" class="headerlink" title="全局作用域（全局变量）【在任何地方都能访问】"></a>全局作用域（全局变量）【在任何地方都能访问】</h3><blockquote>
+<p>没有声明在任何函数内部的变量，就是全局，全局变量在全局的任何地方就可以调用和修改，尽量不要使用全局变量，会造成全局污染</p>
+<ul>
+<li>==函数外定义的变量==拥有全局作用域</li>
+<li>==不使用var定义的变量==拥有全局作用域</li>
+<li>==所有window对象上的属性==拥有全局作用域</li>
+<li>==没有声明在任何函数内部==的函数拥有全局作用域<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">1.加在window上边的内容作用域属于全局的，</span><br><span class="line">属于window的属性，可以不用写window，直接写属性名就行</span><br><span class="line">function fn()&#123;</span><br><span class="line">window.nub = 100;</span><br><span class="line">&#125;    </span><br><span class="line">fn();</span><br><span class="line">alert(nub);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">2.变量如果不加声明，就默认认为是window的内容，作用域变成全局了</span><br><span class="line">function fn()&#123;</span><br><span class="line">nub = 100;</span><br><span class="line">&#125;    </span><br><span class="line">fn();</span><br><span class="line">alert(nub);</span><br><span class="line"></span><br><span class="line">3.没有声明在任何函数内部的变量(全局),就是全局变量。</span><br><span class="line">在全局的任何地方就可以调用和修改,尽量不要使用全局变量，会造成全局污染</span><br><span class="line">var nub = 0;</span><br><span class="line">function fn()&#123;</span><br><span class="line">nub = 10;</span><br><span class="line">&#125;</span><br><span class="line">fn();</span><br><span class="line">alert(nub);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<h4 id="全局命名空间污染："><a href="#全局命名空间污染：" class="headerlink" title="全局命名空间污染："></a>全局命名空间污染：</h4><blockquote>
+<p>在程序中经常需要引用一些库，如C++编译系统提供的标准库、由第三方软件开发商提供的开发库或者用户自己开发的库等。如果在这些库中含有与程序中定义的全局实体同名的实体，或者不同的库之间有同名的实体，则在编译时都会出现名字冲突，这就称为全局命名空间污染 (命名冲突)</p>
+</blockquote>
+<h3 id="局部作用域（局部变量）【只能在函数内部访问】"><a href="#局部作用域（局部变量）【只能在函数内部访问】" class="headerlink" title="局部作用域（局部变量）【只能在函数内部访问】"></a>局部作用域（局部变量）【只能在函数内部访问】</h3><ul>
+<li>使用var在函数内部定义的变量,和使用function在函数内部声明的函数,拥有局部作用域<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//i在当前的函数中定义为0，下面的函数中并没有这个i，所以报错</span><br><span class="line">(function()&#123;</span><br><span class="line">var i = 0;</span><br><span class="line">&#125;)();</span><br><span class="line">(function()&#123;</span><br><span class="line">alert(i); //报错</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h2><blockquote>
+<p>当我们调用一个变量或者函数的时候，首先会在当前作用域下找该变量和函数的声明，如果当前作用域下没有，则会找当前作用域上一级作用域，直到找到或找到全局作用域下是否有声明，如果还有没有，则报错。</p>
+</blockquote>
+<h3 id="变量与函数的查找规则："><a href="#变量与函数的查找规则：" class="headerlink" title="变量与函数的查找规则："></a>变量与函数的查找规则：</h3><ul>
+<li>当我们调用一条数据的时候，js首先会在当前作用域中进行查找，如果找不到，就向上找到父级的作用域，如果在父级的作用域中也找不到，就继续向上查找，直到window的作用域。如果在window中也找不到，就报错了。如果在当前作用域中找到了，那就用当前的。</li>
+</ul>
+<h2 id="预解析"><a href="#预解析" class="headerlink" title="预解析"></a>预解析</h2><blockquote>
+<p>浏览器每读到一个script标签或function，先不执行任何代码，会先把整个代码快速的浏览一遍，然后从中 挑出 var 和 function两个关键字 .</p>
+<ul>
+<li>var： 预解析遇到 var 就把 ==var 连同它后边的名字==一块 提到script(或function) 的最前边,预解析完成之后，在从上向下一行一行执行代码，如果碰到了 = 就赋值;</li>
+<li>function:预解析遇到function,就把整个函数提到提到==script(或function) 的最前边==（跟在var的后边预解析先解析var 再解析 function）<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">alert(b);//function b()&#123;console.log(1);&#125;</span><br><span class="line">function b()&#123;</span><br><span class="line">console.log(1);</span><br><span class="line">&#125;</span><br><span class="line">var b = 0;</span><br><span class="line">解析步骤：</span><br><span class="line">var b;</span><br><span class="line">function b()&#123;</span><br><span class="line">console.log(1);</span><br><span class="line">&#125;</span><br><span class="line">alert(b);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">alert(b); // function b()&#123; var b = 10; &#125;</span><br><span class="line">var b = 0;</span><br><span class="line">alert(b); // 0</span><br><span class="line">function b()&#123; var b = 10; &#125;    </span><br><span class="line">alert(b); // 0   </span><br><span class="line">var b = 20;</span><br><span class="line">alert(b); //20</span><br><span class="line">var b = function()&#123; var b = 30;&#125;</span><br><span class="line">alert(b); // function()&#123; var b = 30;&#125;</span><br><span class="line"></span><br><span class="line">解析步骤：</span><br><span class="line">var b;</span><br><span class="line">var b;</span><br><span class="line">var b;</span><br><span class="line">function b()&#123;var b = 10;&#125;</span><br><span class="line">alert(b);</span><br><span class="line">var b = 0;</span><br><span class="line">alert(b);</span><br><span class="line">alert(b);</span><br><span class="line">var b = 20;</span><br><span class="line">alert(b);</span><br><span class="line">var b = function()&#123;var b = 30;&#125;</span><br><span class="line">alert(b);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">alert(a);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">var a = 100;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><blockquote>
+<p>函数嵌套函数产生一个闭包环境，内部函数可以访问外部函数的局部变量数据,但是外部函数不能访问内部函数的局部变量数据。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">function fn(x) &#123;</span><br><span class="line">return function(y)&#123;</span><br><span class="line">alert(x + y);</span><br><span class="line">&#125;;</span><br><span class="line">&#125;    </span><br><span class="line">var bar = fn(2);</span><br><span class="line">bar(10);</span><br><span class="line"></span><br><span class="line">//解析</span><br><span class="line">var bar;</span><br><span class="line">function fn(x)&#123;</span><br><span class="line">return function(y)&#123;</span><br><span class="line">alert(x+y);</span><br><span class="line">&#125;;</span><br><span class="line">&#125;</span><br><span class="line">var bar = fn(2);</span><br><span class="line">var bar = function(y)&#123;</span><br><span class="line">alert(2+y);</span><br><span class="line">&#125;</span><br><span class="line">bar(10);</span><br><span class="line">function bar(10)&#123;</span><br><span class="line">alert(2+10); //12;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="闭包应用"><a href="#闭包应用" class="headerlink" title="闭包应用"></a>闭包应用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">var btn = document.querySelectorAll(&apos;input&apos;);</span><br><span class="line">function setEv(nub)&#123;</span><br><span class="line">btn[nub].onclick = function()&#123;</span><br><span class="line">alert(nub);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">/*setEv(0);</span><br><span class="line">setEv(1);</span><br><span class="line">setEv(2);*/</span><br><span class="line">for(var i = 0; i &lt; btn.length; i++)&#123;</span><br><span class="line">setEv(i);</span><br><span class="line">&#125;</span><br><span class="line">_________________________</span><br><span class="line">var btn = document.querySelectorAll(&apos;input&apos;);</span><br><span class="line">for(var i = 0; i &lt; btn.length; i++)&#123;</span><br><span class="line">//每一次都自执行一次，然后把每次循环的i值通过形参传入</span><br><span class="line">(function(index)&#123;</span><br><span class="line">btn[index].onclick = function()&#123;</span><br><span class="line">alert(index);</span><br><span class="line">&#125;</span><br><span class="line">&#125;)(i);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">——————————————————————————</span><br><span class="line">var btn = document.querySelector(&apos;input&apos;);</span><br><span class="line">function setEv()&#123;</span><br><span class="line">var nub = 0;</span><br><span class="line">return function()&#123;</span><br><span class="line">nub++;</span><br><span class="line">alert(nub);</span><br><span class="line">&#125;;</span><br><span class="line">&#125;</span><br><span class="line">// var fn  = setEv();</span><br><span class="line">// fn();</span><br><span class="line">// fn();</span><br><span class="line">btn.onclick = setEv();</span><br><span class="line"></span><br><span class="line">解析：</span><br><span class="line">var nub = 0;</span><br><span class="line">btn.onclick = function()&#123;</span><br><span class="line">nub++;</span><br><span class="line">alert(nub); //1 2 3 ....</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="内存泄漏"><a href="#内存泄漏" class="headerlink" title="内存泄漏"></a>内存泄漏</h2><p>问题：当内部函数被外部所引用的时候，那么闭包函数所产生的数据将不会被垃圾回收，可能会造成程序中的数据在内存所占用的空间得不到及时的释放，从而产生内存泄漏。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://caofuqing.top/2019/03/21/2019032108/" data-id="clvyuddb1000pjsjhsjvxo45z" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/05/28/2019052801/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          iOS 源代码分析 --- Masonry
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/03/21/2019032107/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">javascript(十)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/flutter/">flutter</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/iOS/">iOS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/学习计划/">学习计划</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/09/05/2021090501/">加解密方案</a>
+          </li>
+        
+          <li>
+            <a href="/2021/09/04/2021090401/">短信链</a>
+          </li>
+        
+          <li>
+            <a href="/2021/09/01/2021090102/">Flutter代码开发规范</a>
+          </li>
+        
+          <li>
+            <a href="/2021/09/01/2021090101/">Flutter与小程序通讯全过程</a>
+          </li>
+        
+          <li>
+            <a href="/2020/03/31/2020033101/">学习Flutter的艰辛之谈</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 talking<br>
+      WeChat: qingguoxinghou   QQ: 905167677 
+
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

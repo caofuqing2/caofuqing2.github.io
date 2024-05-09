@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Flutter代码开发规范 | 曹福清</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="代码风格标识符三种类型大驼峰类、枚举、typedef和类型参数   class SliderMenu { … }   class HttpRequest { … }   typedef Predicate = bool Function(T value);包括用于元数据注释的类   class Foo {    const Foo([arg]);  }   @Foo(anArg)  class A">
+<meta name="keywords" content="曹福清 博客">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flutter代码开发规范">
+<meta property="og:url" content="http://caofuqing.top/2021/09/01/2021090102/index.html">
+<meta property="og:site_name" content="曹福清">
+<meta property="og:description" content="代码风格标识符三种类型大驼峰类、枚举、typedef和类型参数   class SliderMenu { … }   class HttpRequest { … }   typedef Predicate = bool Function(T value);包括用于元数据注释的类   class Foo {    const Foo([arg]);  }   @Foo(anArg)  class A">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2021-09-04T03:37:31.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Flutter代码开发规范">
+<meta name="twitter:description" content="代码风格标识符三种类型大驼峰类、枚举、typedef和类型参数   class SliderMenu { … }   class HttpRequest { … }   typedef Predicate = bool Function(T value);包括用于元数据注释的类   class Foo {    const Foo([arg]);  }   @Foo(anArg)  class A">
+  
+    <link rel="alternate" href="/atom.xml" title="曹福清" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">曹福清</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">个人博客</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://caofuqing.top"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2021090102" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/09/01/2021090102/" class="article-date">
+  <time datetime="2021-09-01T12:17:28.000Z" itemprop="datePublished">2021-09-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/flutter/">flutter</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Flutter代码开发规范
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>代码风格<br>标识符三种类型<br>大驼峰<br>类、枚举、typedef和类型参数</p>
+<p>  class SliderMenu { … }</p>
+<p>  class HttpRequest { … }</p>
+<p>  typedef Predicate = bool Function<t>(T value);<br>包括用于元数据注释的类</t></p>
+<p>  class Foo {<br>    const Foo([arg]);<br>  }</p>
+<p>  @Foo(anArg)<br>  class A { … }</p>
+<p>  @Foo()<br>  class B { … }<br>使用小写加下划线来命名库和源文件<br>  library peg_parser.source_scanner;</p>
+<p>  import ‘file_system.dart’;<br>  import ‘slider_menu.dart’;</p>
+<a id="more"></a>
+<p>不推荐如下写法：</p>
+<p>  library pegparser.SourceScanner;</p>
+<p>  import ‘file-system.dart’;<br>  import ‘SliderMenu.dart’;<br>使用小写加下划线来命名导入前缀<br>  import ‘dart:math’ as math;<br>  import ‘package:angular_components/angular_components’<br>      as angular_components;<br>  import ‘package:js/js.dart’ as js;<br>不推荐如下写法：</p>
+<p>  import ‘dart:math’ as Math;<br>  import ‘package:angular_components/angular_components’<br>      as angularComponents;<br>  import ‘package:js/js.dart’ as JS;<br>使用小驼峰法命名其他标识符<br>  var item;</p>
+<p>  HttpRequest httpRequest;</p>
+<p>  void align(bool clearItems) {<br>    // …<br>  }<br>优先使用小驼峰法作为常量命名<br>  const pi = 3.14;<br>  const defaultTimeout = 1000;<br>  final urlScheme = RegExp(‘^([a-z]+):’);</p>
+<p>  class Dice {<br>    static final numberGenerator = Random();<br>  }<br>不推荐如下写法：</p>
+<p>  const PI = 3.14;<br>  const DefaultTimeout = 1000;<br>  final URL_SCHEME = RegExp(‘^([a-z]+):’);</p>
+<p>  class Dice {<br>    static final NUMBER_GENERATOR = Random();<br>  }<br>不使用前缀字母<br>因为Dart可以告诉您声明的类型、范围、可变性和其他属性，所以没有理由将这些属性编码为标识符名称。</p>
+<p>  defaultTimeout<br>不推荐如下写法：</p>
+<p>  kDefaultTimeout<br>排序<br>为了使你的文件前言保持整洁，我们有规定的命令，指示应该出现在其中。每个“部分”应该用空行分隔。</p>
+<p>在其他引入之前引入所需的dart库<br>  import ‘dart:async’;<br>  import ‘dart:html’;</p>
+<p>  import ‘package:bar/bar.dart’;<br>  import ‘package:foo/foo.dart’;<br>在相对引入之前先引入在包中的库<br>  import ‘package:bar/bar.dart’;<br>  import ‘package:foo/foo.dart’;</p>
+<p>  import ‘util.dart’;<br>第三方包的导入先于其他包<br>  import ‘package:bar/bar.dart’;<br>  import ‘package:foo/foo.dart’;</p>
+<p>  import ‘package:my_package/util.dart’;<br>在所有导入之后，在单独的部分中指定导出<br>  import ‘src/error.dart’;<br>  import ‘src/foo_bar.dart’;</p>
+<p>  export ‘src/error.dart’;<br>不推荐如下写法：</p>
+<p>  import ‘src/error.dart’;<br>  export ‘src/error.dart’;<br>  import ‘src/foo_bar.dart’;<br>所有流控制结构，请使用大括号<br>这样做可以避免悬浮的else问题</p>
+<p>  if (isWeekDay) {<br>    print(‘Bike to work!’);<br>  } else {<br>    print(‘Go dancing or read a book!’);<br>  }<br>例外<br>一个if语句没有else子句，其中整个if语句和then主体都适合一行。在这种情况下，如果你喜欢的话，你可以去掉大括号</p>
+<p>  if (arg == null) return defaultValue;<br>如果流程体超出了一行需要分划请使用大括号：</p>
+<p>  if (overflowChars != other.overflowChars) {<br>    return overflowChars &lt; other.overflowChars;<br>  }<br>不推荐如下写法：</p>
+<p>  if (overflowChars != other.overflowChars)<br>    return overflowChars &lt; other.overflowChars;<br>注释<br>要像句子一样格式化<br>除非是区分大小写的标识符，否则第一个单词要大写。以句号结尾(或“!”或“?”)。对于所有的注释都是如此：doc注释、内联内容，甚至TODOs。即使是一个句子片段。</p>
+<p>  greet(name) {<br>    // Assume we have a valid name.<br>    print(‘Hi, $name!’);<br>  }<br>不推荐如下写法：</p>
+<p>  greet(name) {<br>    /<em> Assume we have a valid name. </em>/<br>    print(‘Hi, $name!’);<br>  }<br>可以使用块注释(/…/)临时注释掉一段代码，但是所有其他注释都应该使用//</p>
+<p>Doc注释<br>使用///文档注释来记录成员和类型。</p>
+<p>使用doc注释而不是常规注释，可以让dartdoc找到并生成文档。</p>
+<p>  /// The number of characters in this chunk when unsplit.<br>  int get length =&gt; …<br>由于历史原因，达特茅斯学院支持道格评论的两种语法:///(“C#风格”)和/*<em>…</em> /(“JavaDoc风格”)。我们更喜欢/// 因为它更紧凑。/<em>和/在多行文档注释中添加两个无内容的行。在某些情况下，///语法也更容易阅读，例如文档注释包含使用</em>标记列表项的项目符号列表。</p>
+<p>考虑为私有api编写文档注释<br>Doc注释并不仅仅针对库的公共API的外部使用者。它们还有助于理解从库的其他部分调用的私有成员</p>
+<p>用一句话总结开始doc注释<br>以简短的、以用户为中心的描述开始你的文档注释，以句号结尾。</p>
+<p>/// Deletes the file at [path] from the file system.<br>void delete(String path) {<br>  …<br>}<br>不推荐如下写法：</p>
+<p>  /// Depending on the state of the file system and the user’s permissions,<br>  /// certain operations may or may not be possible. If there is no file at<br>  /// [path] or it can’t be accessed, this function throws either [IOError]<br>  /// or [PermissionError], respectively. Otherwise, this deletes the file.<br>  void delete(String path) {<br>    …<br>  }<br>“doc注释”的第一句话分隔成自己的段落<br>在第一个句子之后添加一个空行，把它分成自己的段落</p>
+<p>  /// Deletes the file at [path].<br>  ///<br>  /// Throws an [IOError] if the file could not be found. Throws a<br>  /// [PermissionError] if the file is present but could not be deleted.<br>  void delete(String path) {<br>    …<br>  }<br>Flutter_Go 使用参考<br>库的引用<br>flutter go 中，导入lib下文件库，统一指定包名，避免过多的../../</p>
+<p>package:flutter_go/<br>字符串的使用<br>使用相邻字符串连接字符串文字<br>如果有两个字符串字面值(不是值，而是实际引用的字面值)，则不需要使用+连接它们。就像在C和c++中，简单地把它们放在一起就能做到。这是创建一个长字符串很好的方法但是不适用于单独一行。</p>
+<p>raiseAlarm(<br>    ‘ERROR: Parts of the spaceship are on fire. Other ‘<br>    ‘parts are overrun by martians. Unclear which are which.’);<br>不推荐如下写法:</p>
+<p>raiseAlarm(‘ERROR: Parts of the spaceship are on fire. Other ‘ +<br>    ‘parts are overrun by martians. Unclear which are which.’);<br>优先使用模板字符串<br>‘Hello, $name! You are ${year - birth} years old.’;<br>在不需要的时候，避免使用花括号<br>  ‘Hi, $name!’<br>  “Wear your wildest $decade’s outfit.”<br>不推荐如下写法：</p>
+<p>  ‘Hello, ‘ + name + ‘! You are ‘ + (year - birth).toString() + ‘ y…’;<br>不推荐如下写法：</p>
+<p>  ‘Hi, ${name}!’<br>  “Wear your wildest ${decade}’s outfit.”<br>集合<br>尽可能使用集合字面量<br>如果要创建一个不可增长的列表，或者其他一些自定义集合类型，那么无论如何，都要使用构造函数。</p>
+<p>  var points = [];<br>  var addresses = {};<br>  var lines = <lines>[];<br>不推荐如下写法：</lines></p>
+<p>  var points = List();<br>  var addresses = Map();<br>不要使用.length查看集合是否为空<br>if (lunchBox.isEmpty) return ‘so hungry…’;<br>if (words.isNotEmpty) return words.join(‘ ‘);<br>不推荐如下写法：</p>
+<p>  if (lunchBox.length == 0) return ‘so hungry…’;<br>  if (!words.isEmpty) return words.join(‘ ‘);<br>考虑使用高阶方法转换序列<br>如果有一个集合，并且希望从中生成一个新的修改后的集合，那么使用.map()、.where()和Iterable上的其他方便的方法通常更短，也更具有声明性</p>
+<p>  var aquaticNames = animals<br>      .where((animal) =&gt; animal.isAquatic)<br>      .map((animal) =&gt; animal.name);<br>避免使用带有函数字面量的Iterable.forEach()<br>在Dart中，如果你想遍历一个序列，惯用的方法是使用循环。</p>
+<p>for (var person in people) {<br>  …<br>}<br>不推荐如下写法：</p>
+<p>  people.forEach((person) {<br>    …<br>  });<br>不要使用List.from()，除非打算更改结果的类型<br>给定一个迭代，有两种明显的方法可以生成包含相同元素的新列表</p>
+<p>var copy1 = iterable.toList();<br>var copy2 = List.from(iterable);<br>明显的区别是第一个比较短。重要的区别是第一个保留了原始对象的类型参数</p>
+<p>// Creates a List<int>:<br>var iterable = [1, 2, 3];</int></p>
+<p>// Prints “List<int>“:<br>print(iterable.toList().runtimeType);<br>// Creates a List<int>:<br>var iterable = [1, 2, 3];</int></int></p>
+<p>// Prints “List<dynamic>“:<br>print(List.from(iterable).runtimeType);<br>参数的使用<br>使用=将命名参数与其默认值分割开<br>由于遗留原因，Dart均允许“:”和“=”作为指定参数的默认值分隔符。为了与可选的位置参数保持一致，使用“=”。</dynamic></p>
+<p>  void insert(Object item, {int at = 0}) { … }<br>不推荐如下写法：</p>
+<p>  void insert(Object item, {int at: 0}) { … }<br>不要使用显式默认值null<br>如果参数是可选的，但没有给它一个默认值，则语言隐式地使用null作为默认值，因此不需要编写它</p>
+<p>void error([String message]) {<br>  stderr.write(message ?? ‘\n’);<br>}<br>不推荐如下写法:</p>
+<p>void error([String message = null]) {<br>  stderr.write(message ?? ‘\n’);<br>}<br>变量<br>不要显式地将变量初始化为空<br>在Dart中，未显式初始化的变量或字段自动被初始化为null。不要多余赋值null</p>
+<p>  int _nextId;</p>
+<p>  class LazyId {<br>    int _id;</p>
+<pre><code>int get id {
+  if (_nextId == null) _nextId = 0;
+  if (_id == null) _id = _nextId++;
+
+  return _id;
+}
+</code></pre><p>  }<br>不推荐如下写法：</p>
+<p>  int _nextId = null;</p>
+<p>  class LazyId {<br>    int _id = null;</p>
+<pre><code>int get id {
+  if (_nextId == null) _nextId = 0;
+  if (_id == null) _id = _nextId++;
+
+  return _id;
+}
+</code></pre><p>  }<br>避免储存你能计算的东西<br>在设计类时，您通常希望将多个视图公开到相同的底层状态。通常你会看到在构造函数中计算所有视图的代码，然后存储它们:</p>
+<p>应该避免的写法：</p>
+<p>  class Circle {<br>    num radius;<br>    num area;<br>    num circumference;</p>
+<pre><code>Circle(num radius)
+    : radius = radius,
+      area = pi * radius * radius,
+      circumference = pi * 2.0 * radius;
+</code></pre><p>  }<br>如上代码问题：</p>
+<p>浪费内存<br>缓存的问题是无效——如何知道何时缓存过期需要重新计算？<br>推荐的写法如下：</p>
+<p>  class Circle {<br>    num radius;</p>
+<pre><code>Circle(this.radius);
+
+num get area =&gt; pi * radius * radius;
+num get circumference =&gt; pi * 2.0 * radius;
+</code></pre><p>  }<br>类成员<br>不要把不必要地将字段包装在getter和setter中<br>不推荐如下写法：</p>
+<p>  class Box {<br>    var _contents;<br>    get contents =&gt; _contents;<br>    set contents(value) {<br>      _contents = value;<br>    }<br>  }<br>优先使用final字段来创建只读属性<br>尤其对于 StatelessWidget</p>
+<p>在不需要的时候不要用this<br>不推荐如下写法：</p>
+<p>  class Box {<br>    var value;</p>
+<pre><code>void clear() {
+  this.update(null);
+}
+
+void update(value) {
+  this.value = value;
+}
+</code></pre><p>  }<br>推荐如下写法：</p>
+<p>  class Box {<br>    var value;</p>
+<pre><code>void clear() {
+  update(null);
+}
+
+void update(value) {
+  this.value = value;
+}
+</code></pre><p>  }<br>构造函数<br>尽可能使用初始化的形式<br>不推荐如下写法：</p>
+<p>  class Point {<br>    num x, y;<br>    Point(num x, num y) {<br>      this.x = x;<br>      this.y = y;<br>    }<br>  }<br>推荐如下写法：</p>
+<p>class Point {<br>  num x, y;<br>  Point(this.x, this.y);<br>}<br>不要使用new<br>Dart2使new 关键字可选</p>
+<p>推荐写法：</p>
+<p>  Widget build(BuildContext context) {<br>    return Row(<br>      children: [<br>        RaisedButton(<br>          child: Text(‘Increment’),<br>        ),<br>        Text(‘Click!’),<br>      ],<br>    );<br>  }<br>不推荐如下写法：</p>
+<p>  Widget build(BuildContext context) {<br>    return new Row(<br>      children: [<br>        new RaisedButton(<br>          child: new Text(‘Increment’),<br>        ),<br>        new Text(‘Click!’),<br>      ],<br>    );<br>  }<br>异步<br>优先使用async/await代替原始的futures<br>async/await语法提高了可读性，允许你在异步代码中使用所有Dart控制流结构。<br>  Future<int> countActivePlayers(String teamName) async {<br>    try {<br>      var team = await downloadTeam(teamName);<br>      if (team == null) return 0;</int></p>
+<pre><code>  var players = await team.roster;
+  return players.where((player) =&gt; player.isActive).length;
+} catch (e) {
+  log.error(e);
+  return 0;
+}
+</code></pre><p>  }<br>当异步没有任何用处时，不要使用它<br>如果可以在不改变函数行为的情况下省略异步，那么就这样做。、</p>
+<p>  Future afterTwoThings(Future first, Future second) {<br>    return Future.wait([first, second]);<br>  }<br>不推荐写法：</p>
+<p>  Future afterTwoThings(Future first, Future second) async {<br>    return Future.wait([first, second]);<br>  }</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://caofuqing.top/2021/09/01/2021090102/" data-id="clvyuddb8001djsjh66cjzae8" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/09/04/2021090401/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          短信链
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/09/01/2021090101/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Flutter与小程序通讯全过程</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/flutter/">flutter</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/iOS/">iOS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/学习计划/">学习计划</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/09/05/2021090501/">加解密方案</a>
+          </li>
+        
+          <li>
+            <a href="/2021/09/04/2021090401/">短信链</a>
+          </li>
+        
+          <li>
+            <a href="/2021/09/01/2021090102/">Flutter代码开发规范</a>
+          </li>
+        
+          <li>
+            <a href="/2021/09/01/2021090101/">Flutter与小程序通讯全过程</a>
+          </li>
+        
+          <li>
+            <a href="/2020/03/31/2020033101/">学习Flutter的艰辛之谈</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 talking<br>
+      WeChat: qingguoxinghou   QQ: 905167677 
+
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>加解密方案 | 曹福清</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="AES加解密  RSA签名 加密:0.排序和加密方式    NSDictionary  riskInfoDic = @{@”loginAccount”:@”admin”,                                   @”password”:@”12345678”,                                   };排序结果    NSString  s">
+<meta name="keywords" content="曹福清 博客">
+<meta property="og:type" content="article">
+<meta property="og:title" content="加解密方案">
+<meta property="og:url" content="http://caofuqing.top/2021/09/05/2021090501/index.html">
+<meta property="og:site_name" content="曹福清">
+<meta property="og:description" content="AES加解密  RSA签名 加密:0.排序和加密方式    NSDictionary  riskInfoDic = @{@”loginAccount”:@”admin”,                                   @”password”:@”12345678”,                                   };排序结果    NSString  s">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://ftp6478132.host130.sanfengyun.cn/images/1.png">
+<meta property="og:image" content="http://ftp6478132.host130.sanfengyun.cn/images/2.png">
+<meta property="og:image" content="http://ftp6478132.host130.sanfengyun.cn/images/3.png">
+<meta property="og:updated_time" content="2021-09-04T23:48:46.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="加解密方案">
+<meta name="twitter:description" content="AES加解密  RSA签名 加密:0.排序和加密方式    NSDictionary  riskInfoDic = @{@”loginAccount”:@”admin”,                                   @”password”:@”12345678”,                                   };排序结果    NSString  s">
+<meta name="twitter:image" content="http://ftp6478132.host130.sanfengyun.cn/images/1.png">
+  
+    <link rel="alternate" href="/atom.xml" title="曹福清" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">曹福清</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">个人博客</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://caofuqing.top"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2021090501" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/09/05/2021090501/" class="article-date">
+  <time datetime="2021-09-04T23:24:18.000Z" itemprop="datePublished">2021-09-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/随笔/">随笔</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      加解密方案
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://tool.chacuo.net/cryptaes" target="_blank" rel="noopener">AES加解密</a>  <a href="http://www.metools.info/code/c82.html" target="_blank" rel="noopener">RSA签名</a></p>
+<p>加密:<br>0.排序和加密方式<br>    NSDictionary <em> riskInfoDic = @{@”loginAccount”:@”admin”,<br>                                   @”password”:@”12345678”,<br>                                   };<br>排序结果<br>    NSString </em> signStr = @”admin12345678”;</p>
+<h3 id="0-加密方式"><a href="#0-加密方式" class="headerlink" title="0.加密方式"></a>0.加密方式</h3><p>用RSA SHA256加签方式对signStr进行加签</p>
+<a id="more"></a>
+<h3 id="1-在解密的过程中-iv偏移量就是ASK"><a href="#1-在解密的过程中-iv偏移量就是ASK" class="headerlink" title="1.在解密的过程中 iv偏移量就是ASK"></a>1.在解密的过程中 iv偏移量就是ASK</h3><p><img src="http://ftp6478132.host130.sanfengyun.cn/images/1.png" alt="Image text"></p>
+<h3 id="￼￼￼2-在对服务器返回的数据排序过程中-Treemap字典只排序第一层"><a href="#￼￼￼2-在对服务器返回的数据排序过程中-Treemap字典只排序第一层" class="headerlink" title="￼￼￼2.在对服务器返回的数据排序过程中  Treemap字典只排序第一层"></a>￼￼￼2.在对服务器返回的数据排序过程中  Treemap字典只排序第一层</h3><p><img src="http://ftp6478132.host130.sanfengyun.cn/images/2.png" alt="Image text"></p>
+<p>下面是数据2层或多层的时候 只排序最外层<br><img src="http://ftp6478132.host130.sanfengyun.cn/images/3.png" alt="Image text"></p>
+<p>客户端私钥<br>—–BEGIN PRIVATE KEY—–<br>MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBAKLLbA7Aghe4bf9q<br>exN929rmaZNZ4sLXxqn6zNugRKQ8R+BdxTYg9D8h2T+UWWY04kpjnGf6bTh+IdRE<br>tI7LmN2C6LZaetoHIa/mycD0PFWXIEsIMB+N46jy9rVdqMrgHB0VnGfEH494JrBf<br>fwHzp3FLE+OZ9zpsZG+UE1ki3B1/AgMBAAECgYA+gK+qMktAZDUHXZCHeUkSEGj0<br>hAxGFqZV2M8Se8Qe8m3+PMJc9+YO3yYT/Rcd4KwJN5lzanjIudSvNPnF4XF87aXO<br>O1Y6NEu8rPaOQGfxyq4NUHf1KcFbShybrgNyj3ii5w+eftTzZViE1OA3J3pdqnp1<br>wQBoHRwbspORew/24QJBANf4Z8TnktHXgHH1Q/y8cRDgNGVfEt6J17qvYt5FuTbT<br>l2/vI9j/W6AmW/zMqwwJ0Q4qwaAmQavvGRtKMiwnhckCQQDA9+CxU1QfuKp5YCAG<br>6+YLTvaFdi2xTIomMK1I4hi7qnQxCTPmXrWup5wjpb5g0GxxfS72o+4Nt86Ud3lj<br>Ok0HAkBTA6mndzfpLwOxSgxrDmgLi5K4UHYpUiS5HodLVtOdrnFsViiaVXV7tqLv<br>JiCtTOytnGO20l213/7vjXKBpGN5AkEAqvz6hSapbFJd/J9IwdlWRr75gtltM6X2<br>5FBNvD9cWy53NtxIuOFDbDfpC01anL8S2J1sd/BaiJ1O2A/l6B9JEQJBAKwC8Rkm<br>L7aYsNOLi0+xgmQ5V462wvkfWRxndJ77CAGIHvHhAH6npifTmmbNVdONXE5wIg8F<br>/qe6o9wAILWJVTo=<br>—–END PRIVATE KEY—–</p>
+<p>客户端公钥<br>—–BEGIN PUBLIC KEY—–<br>MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCiy2wOwIIXuG3/ansTfdva5mmT<br>WeLC18ap+szboESkPEfgXcU2IPQ/Idk/lFlmNOJKY5xn+m04fiHURLSOy5jdgui2<br>WnraByGv5snA9DxVlyBLCDAfjeOo8va1XajK4BwdFZxnxB+PeCawX38B86dxSxPj<br>mfc6bGRvlBNZItwdfwIDAQAB<br>—–END PUBLIC KEY—–</p>
+<p>待签名，验签原始内容 (字符串)<br>loginAccount=admin&amp;password=12345678</p>
+<p>签名结果sigin:<br>cfq&gt;&gt;&gt;&gt;CT4S6WodJC0WsbehFUcr6PysIJT4QOu0APJXwoTrl1hRDsIKfqDs9HCamZDP3/kXCQ3B7m9JfD4OMC7ycQ65VXl8vi4Wrpo+AZdKNrL2iHsaeCacktIOLM+rBnVIe5rz0CloniTpENVRpNFuvBbbaeWfICVUm1ourCAWcKhaDp4=</p>
+<p>“{\”loginAccount\”:\”admin\”,\”password\”:\”123456\”}”</p>
+<p>“{\”loginAccount\”:\”admin\”,\”password\”:\”123456\”,\”sign\”:\”cPISDCDwTeKWClWragmc1/YlNhpmoUjDkETofGYOp8ps8ZDAeNFRwIJzBp/Q5BPuKS71Mt9Uzr5ggXj1m0YxnqEE2+eGl0pRY1xpAqn706+frrJ4IZD1KeDzq+YCna4aQZQOyagDeLYWtkA5PXZAGIDEVNFbCNq1mM+nfdQ/x6A=\”}”</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://caofuqing.top/2021/09/05/2021090501/" data-id="clvyuddba001kjsjhtbgqdar8" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2021/09/04/2021090401/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">短信链</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/flutter/">flutter</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/iOS/">iOS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/学习计划/">学习计划</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/09/05/2021090501/">加解密方案</a>
+          </li>
+        
+          <li>
+            <a href="/2021/09/04/2021090401/">短信链</a>
+          </li>
+        
+          <li>
+            <a href="/2021/09/01/2021090102/">Flutter代码开发规范</a>
+          </li>
+        
+          <li>
+            <a href="/2021/09/01/2021090101/">Flutter与小程序通讯全过程</a>
+          </li>
+        
+          <li>
+            <a href="/2020/03/31/2020033101/">学习Flutter的艰辛之谈</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 talking<br>
+      WeChat: qingguoxinghou   QQ: 905167677 
+
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
